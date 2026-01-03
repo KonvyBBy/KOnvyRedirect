@@ -1,75 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Fortnite Accounts Viewer</title>
-<style>
-  body { font-family: Arial, sans-serif; margin: 20px; }
-  h1 { text-align: center; }
-  #loadBtn { padding: 10px 20px; font-size: 16px; cursor: pointer; }
-  #accounts { margin-top: 20px; }
-  .account { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
-  .account h2 { margin-top: 0; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
 </head>
 <body>
-<h1>Fortnite Accounts List</h1>
-<div style="text-align:center;">
-  <button id="loadBtn">Load Accounts</button>
-</div>
-<div id="accounts"></div>
-
-<script>
-const API_URL = 'https://prod-api.lzt.market/fortnite';
-
-// <-- Replace this with your actual API token -->
-const AUTH_TOKEN = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJzdWIiOjk2NDY0NTAsImlzcyI6Imx6dCIsImlhdCI6MTc2NDM4NzYxNywianRpIjoiODg4NTc2Iiwic2NvcGUiOiJiYXNpYyByZWFkIHBvc3QgY29udmVyc2F0ZSBwYXltZW50IGludm9pY2UgY2hhdGJveCBtYXJrZXQiLCJleHAiOjE5MjIwNjc2MTd9.FINRlhGeCjVLFdke1Tfb80GPD6Ej7wVfhGa0cwVP3f_RjNHbMJ-cwkE5ehXON7jjTAERLxZNT80x_OUKAmrzLWjwo2Y9Ikia8HyNAv_SV8FFzO-0glvvdro-GRWi8dJkXSpi6xaWF3T0IqjpSXJRmlOJ3mrp6-KqhOSg8Gkapds';
-
-document.getElementById('loadBtn').addEventListener('click', () => {
-  fetch(API_URL, {
-    headers: {
-      'accept': 'application/json',
-      'Authorization': 'Bearer ' + AUTH_TOKEN
-    }
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not ok, status: ' + response.status);
-    }
-    return response.json();
-  })
-  .then(data => {
-    const accountsDiv = document.getElementById('accounts');
-    accountsDiv.innerHTML = '';
-
-    if (!data.results || data.results.length === 0) {
-      accountsDiv.innerHTML = '<p>No accounts found.</p>';
-      return;
-    }
-
-    data.results.forEach(account => {
-      // Adjust this based on your actual data structure
-      const skins = account.skins || [];
-      const id = account.id || 'N/A';
-      const price = account.price || 'N/A';
-
-      const accountDiv = document.createElement('div');
-      accountDiv.className = 'account';
-
-      accountDiv.innerHTML = `
-        <h2>Account ID: ${id}</h2>
-        <p><strong>Skins:</strong> ${skins.join(', ')}</p>
-        <p><strong>Price:</strong> ${price}</p>
-      `;
-      accountsDiv.appendChild(accountDiv);
-    });
-  })
-  .catch(error => {
-    alert('Error fetching data: ' + error.message);
-    console.error(error);
-  });
-});
-</script>
+    <h1>Welcome to My Website</h1>
+    <iframe src="https://dddd2323.readdy.co/" width="100%" height="1000px"></iframe>
 </body>
 </html>
